@@ -4,7 +4,7 @@ namespace FactoryPattern;
 
 class Program
 {
-    private static int Kind { get; } = 1;
+    private static int Kind { get; } = 0;
     static void Main(string[] args)
     {
         Console.WriteLine("Press Enter to get data, and the other Keys for Input Trigger. Esc to exit.");
