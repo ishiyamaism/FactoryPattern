@@ -1,6 +1,6 @@
 namespace FactoryPattern.Data;
 
-public sealed class ProductFake
+public sealed class ProductFake : IProduct
 {
   public string GetData()
   {

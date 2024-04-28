@@ -4,7 +4,8 @@ namespace FactoryPattern;
 
 class Program
 {
-    private static int Kind { get; } = 0;
+    private static int Kind { get; } = 1;
+    private static IProduct _product = new ProductFake();
     static void Main(string[] args)
     {
         Console.WriteLine("Press Enter to get data, and the other Keys for Input Trigger. Esc to exit.");
@@ -24,14 +25,13 @@ class Program
                 case ConsoleKey.Enter:
                     if (Kind == 0)
                     {
-                        var product = new ProductFake();
-                        Console.WriteLine(product.GetData());
+                        _product = new ProductFake();
                     }
                     else if (Kind == 1)
                     {
-                        var product = new ProductSqlServer();
-                        Console.WriteLine(product.GetData());
+                        _product = new ProductSqlServer();
                     }
+                    Console.WriteLine(_product.GetData());
 
                     break;
                 case ConsoleKey.A:
