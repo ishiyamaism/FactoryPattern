@@ -5,7 +5,7 @@ namespace FactoryPattern;
 
 class Program
 {
-    private static int _kind = 0;
+    private static int _kind = 1;
 
     private static AbstractFactory _factory = AbstractFactory.Create(_kind);
     private static IProduct _product = _factory.CreateProduct();

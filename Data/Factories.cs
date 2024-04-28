@@ -1,3 +1,5 @@
+using FactoryPattern.Exceptions;
+
 namespace FactoryPattern.Data;
 
 public static class Factories
@@ -14,7 +16,7 @@ public static class Factories
     }
     else
     {
-      throw new ArgumentException("指定した数字が間違っています");
+      throw new InvalidArgumentException(kind);
     }
   }
 
@@ -30,7 +32,7 @@ public static class Factories
     }
     else
     {
-      throw new ArgumentException("指定した数字が間違っています");
+      throw new InvalidArgumentException(kind);
     }
   }
 }

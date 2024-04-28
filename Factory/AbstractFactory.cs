@@ -1,4 +1,5 @@
 using FactoryPattern.Data;
+using FactoryPattern.Exceptions;
 
 namespace FactoryPattern.Factory;
 
@@ -18,6 +19,6 @@ public abstract class AbstractFactory
       return new SqlServerFactory();
     }
 
-    throw new ArgumentException("kindがおかしい");
+    throw new InvalidArgumentException(kind);
   }
 }
