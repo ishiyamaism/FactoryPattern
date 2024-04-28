@@ -1,6 +1,6 @@
 namespace FactoryPattern.Data;
 
-internal interface IProduct
+public interface IProduct
 {
   public string GetData();
 

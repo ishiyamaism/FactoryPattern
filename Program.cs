@@ -4,8 +4,7 @@ namespace FactoryPattern;
 
 class Program
 {
-    private static int Kind { get; } = 0;
-    private static IProduct _product = new ProductFake();
+    private static IProduct _product = ProductFactory.CreateProduct(0);
     static void Main(string[] args)
     {
         Console.WriteLine("Press Enter to get data, and the other Keys for Input Trigger. Esc to exit.");
@@ -23,18 +22,7 @@ class Program
             switch (keyInfo.Key)
             {
                 case ConsoleKey.Enter:
-                    if (Kind == 0)
-                    {
-                        _product = new ProductFake();
-                    }
-                    else if (Kind == 1)
-                    {
-                        _product = new ProductSqlServer();
-                    }
-                    else
-                    {
-                        throw new ArgumentException("指定した数字が間違っています");
-                    }
+
                     Console.WriteLine(_product.GetData());
 
                     break;
