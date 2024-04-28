@@ -4,7 +4,8 @@ namespace FactoryPattern;
 
 class Program
 {
-    private static IProduct _product = ProductFactory.CreateProduct(0);
+    private static int _kind = 1;
+    private static IProduct _product = ProductFactory.CreateProduct(_kind);
     static void Main(string[] args)
     {
         Console.WriteLine("Press Enter to get data, and the other Keys for Input Trigger. Esc to exit.");
