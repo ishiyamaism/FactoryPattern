@@ -4,7 +4,7 @@ namespace FactoryPattern;
 
 class Program
 {
-    private static int Kind { get; } = 1;
+    private static int Kind { get; } = 0;
     private static IProduct _product = new ProductFake();
     static void Main(string[] args)
     {
@@ -30,6 +30,10 @@ class Program
                     else if (Kind == 1)
                     {
                         _product = new ProductSqlServer();
+                    }
+                    else
+                    {
+                        throw new ArgumentException("指定した数字が間違っています");
                     }
                     Console.WriteLine(_product.GetData());
 
