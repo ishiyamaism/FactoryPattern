@@ -1,11 +1,15 @@
 ﻿using FactoryPattern.Data;
+using FactoryPattern.Factory;
 
 namespace FactoryPattern;
 
 class Program
 {
-    private static int _kind = 1;
-    private static IProduct _product = Factories.CreateProduct(_kind);
+    private static int _kind = 0;
+
+    private static AbstractFactory _factory = AbstractFactory.Create(_kind);
+    private static IProduct _product = _factory.CreateProduct();
+    private static IStock _stock = _factory.Createstock();
     static void Main(string[] args)
     {
         Console.WriteLine("Press Enter to get data, and the other Keys for Input Trigger. Esc to exit.");
@@ -25,6 +29,7 @@ class Program
                 case ConsoleKey.Enter:
 
                     Console.WriteLine(_product.GetData());
+                    Console.WriteLine(_stock.GetStock());
 
                     break;
                 case ConsoleKey.A:
