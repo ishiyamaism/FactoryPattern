@@ -6,7 +6,7 @@ namespace FactoryPattern.Factory;
 public abstract class AbstractFactory
 {
   public abstract IProduct CreateProduct();
-  public abstract IStock Createstock();
+  public abstract IStock CreateStock();
 
   public static AbstractFactory Create(int kind)
   {

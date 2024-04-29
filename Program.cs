@@ -1,5 +1,5 @@
 ﻿using FactoryPattern.Data;
-// using FactoryPattern.Factory;
+using FactoryPattern.Factory;
 using FactoryPattern.Services;
 
 namespace FactoryPattern;
@@ -9,15 +9,15 @@ static class Program
     public static int Kind { get; set; } = 1;
 
     // Abstract Factoryパターン
-    // private static AbstractFactory _factory = AbstractFactory.Create(Kind);
-    // Factory Methodパターン
-    // private static IProduct _product = _factory.CreateProduct();
-    // private static IStock _stock = _factory.Createstock();
+    private static AbstractFactory _factory = AbstractFactory.Create(Kind);
+    private static IProduct _product = _factory.CreateProduct();
+    private static IStock _stock = _factory.CreateStock();
 
-    private static ProductServiceFactory _productService = new ProductServiceFactory();
-    private static IProduct _product = _productService.Create();
-    private static StockServiceFactory _stockService = new StockServiceFactory();
-    private static IStock _stock = _stockService.Create();
+    //  Factory Methodパターン
+    // private static ProductServiceFactory _productService = new ProductServiceFactory();
+    // private static IProduct _product = _productService.Create();
+    // private static StockServiceFactory _stockService = new StockServiceFactory();
+    // private static IStock _stock = _stockService.Create();
 
 
     static void Main(string[] args)
@@ -51,14 +51,16 @@ static class Program
                 case ConsoleKey.D0:
                     Console.WriteLine("Press: 0");
                     Kind = 0;
-                    _product = _productService.Create();
-                    _stock = _stockService.Create();
+                    _factory = AbstractFactory.Create(Kind);
+                    _product = _factory.CreateProduct();
+                    _stock = _factory.CreateStock();
                     break;
                 case ConsoleKey.D1:
                     Console.WriteLine("Press: 1");
                     Kind = 1;
-                    _product = _productService.Create();
-                    _stock = _stockService.Create();
+                    _factory = AbstractFactory.Create(Kind);
+                    _product = _factory.CreateProduct();
+                    _stock = _factory.CreateStock();
                     break;
 
                 default:

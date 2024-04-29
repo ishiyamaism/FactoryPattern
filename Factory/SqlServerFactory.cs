@@ -9,7 +9,7 @@ internal sealed class SqlServerFactory : AbstractFactory
     return new ProductSqlServer();
   }
 
-  public override IStock Createstock()
+  public override IStock CreateStock()
   {
     return new StockSqlServer();
 

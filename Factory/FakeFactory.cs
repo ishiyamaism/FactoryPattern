@@ -9,7 +9,7 @@ internal sealed class FakeFactory : AbstractFactory
     return new ProductFake();
   }
 
-  public override IStock Createstock()
+  public override IStock CreateStock()
   {
     return new StockFake();
 
