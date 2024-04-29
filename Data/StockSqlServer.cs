@@ -4,11 +4,11 @@ internal sealed class StockSqlServer : IStock
 {
   public int GetStock()
   {
-    return 11;
+    return 20;
   }
 
   public int GetValidStock()
   {
-    return 10;
+    return 12;
   }
 }

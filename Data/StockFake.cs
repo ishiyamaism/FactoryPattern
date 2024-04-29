@@ -4,11 +4,11 @@ internal sealed class StockFake : IStock
 {
   public int GetStock()
   {
-    return 0;
+    return 2;
   }
 
   public int GetValidStock()
   {
-    return 0;
+    return 1;
   }
 }
