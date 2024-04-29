@@ -6,4 +6,9 @@ internal sealed class ProductSqlServer : IProduct
   {
     return "sql server";
   }
+
+  public DateTime GetValidDateTime()
+  {
+    return Convert.ToDateTime("2024/12/31");
+  }
 }
