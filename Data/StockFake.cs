@@ -7,4 +7,8 @@ internal sealed class StockFake : IStock
     return 0;
   }
 
+  public int GetValidStock()
+  {
+    return 0;
+  }
 }

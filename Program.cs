@@ -1,7 +1,6 @@
 ﻿using FactoryPattern.Data;
-using FactoryPattern.Factory;
+// using FactoryPattern.Factory;
 using FactoryPattern.Services;
-using Microsoft.VisualBasic;
 
 namespace FactoryPattern;
 
@@ -15,8 +14,10 @@ static class Program
     // private static IProduct _product = _factory.CreateProduct();
     // private static IStock _stock = _factory.Createstock();
 
-    private static ProductServiceFactory _service = new ProductServiceFactory();
-    private static IProduct _product = _service.Create();
+    private static ProductServiceFactory _productService = new ProductServiceFactory();
+    private static IProduct _product = _productService.Create();
+    private static StockServiceFactory _stockService = new StockServiceFactory();
+    private static IStock _stock = _stockService.Create();
 
 
     static void Main(string[] args)
@@ -38,7 +39,7 @@ static class Program
                 case ConsoleKey.Enter:
 
                     Console.WriteLine(_product.GetData());
-                    // Console.WriteLine(_stock.GetStock());
+                    Console.WriteLine(_stock.GetStock());
 
                     break;
                 case ConsoleKey.A:
@@ -50,12 +51,14 @@ static class Program
                 case ConsoleKey.D0:
                     Console.WriteLine("Press: 0");
                     Kind = 0;
-                    _product = _service.Create();
+                    _product = _productService.Create();
+                    _stock = _stockService.Create();
                     break;
                 case ConsoleKey.D1:
                     Console.WriteLine("Press: 1");
                     Kind = 1;
-                    _product = _service.Create();
+                    _product = _productService.Create();
+                    _stock = _stockService.Create();
                     break;
 
                 default:

@@ -10,7 +10,7 @@ public abstract class ProductService
     // サブクラスが生成するインスタンスに対するロジックを書く
 
     // ここに共通メソッドを入れられるのがFactory Methodの利点
-    var product = FactoryMethod(Program.Kind);
+    var product = GenerateProduct(Program.Kind);
     var validDate = product.GetValidDateTime();
     if (validDate < DateTime.Now)
     {
@@ -26,6 +26,6 @@ public abstract class ProductService
   /// </summary>
   /// <param name="kind"></param>
   /// <returns></returns>
-  public abstract IProduct FactoryMethod(int kind);
+  public abstract IProduct GenerateProduct(int kind);
 
 }

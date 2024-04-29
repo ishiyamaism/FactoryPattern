@@ -3,17 +3,17 @@ using FactoryPattern.Exceptions;
 
 namespace FactoryPattern.Services;
 
-internal sealed class ProductServiceFactory : ProductService
+internal sealed class StockServiceFactory : StockService
 {
-  public override IProduct GenerateProduct(int kind)
+  public override IStock GenerateStock(int kind)
   {
     if (kind == 0)
     {
-      return new ProductFake();
+      return new StockFake();
     }
     else if (kind == 1)
     {
-      return new ProductSqlServer();
+      return new StockSqlServer();
     }
 
     throw new InvalidArgumentException(kind);
